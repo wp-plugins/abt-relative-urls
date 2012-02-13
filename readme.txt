@@ -2,7 +2,7 @@
 Contributors: atlanticbt, zaus
 Donate link: http://atlanticbt.com
 Tags: development, relative urls, absolute urls, urls, alters
- content, alters post-meta, scrub
+ content, alters post-meta, scrub, domain, domain change, link, links, update links, move wordpress
 Requires at least: 2.8
 Tested up to: 3.3.3
 Stable tag: trunk
@@ -16,10 +16,16 @@ By default, WP inserts absolute urls into post content; this includes the protoc
 
 Especially helpful when developing on a DEV site with the intention of transfering to a LIVE domain.  Please note that you should use this plugin _before_ you start adding content, or you'll have to resave everything later.
 
-Includes code based on [Relative Image URLs][] plugin, which strips domain when inserting images from the Media Library.  A similar idea to [Absolute to Relative URLs][], but works automatically, and handles meta fields.
+Includes code based on [Relative Image URLs][] plugin, which strips domain when inserting images from the Media Library.  A similar idea to the following, but acts as a preventative measure (while you're working), works automatically, and handles meta fields:
+
+* [Go Live Update URLS][]
+* [Absolute to Relative URLs][]
+* [Domain Name & Path Fixer][]
 
 [Absolute to Relative URLs]: http://wordpress.org/extend/plugins/absolute-to-relative-urls/ "Programmatic plugin for removing URLs"
 [Relative Image URLs]: http://wordpress.org/extend/plugins/relative-image-urls/ "Alternate Plugin, not as much functionality"
+[Go Live Update URLS]: http://wordpress.org/extend/plugins/go-live-update-urls/ "Change URLs when pushing LIVE"
+[Domain Name & Path Fixer]: http://wordpress.org/extend/plugins/domain-name-path-fixer-plugin/ "
 
 == Installation ==
 
