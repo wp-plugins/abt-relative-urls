@@ -80,8 +80,8 @@ The reason it looks for the `src`, then `href`, then the actual attribute has to
 Using the hook `abt_relative_urls_exclude_meta`, you can remove fields from the meta array before they are processed.  Anything not in the array won't get re-saved later, so it's effectively ignored.
 
 Ex)
-    
-add_filter('abt_relative_urls_exclude_meta', 'excludepress_meta');
+
+    add_filter('abt_relative_urls_exclude_meta', 'excludepress_meta');
     function excludepress_meta($meta, $post_ID) {
     	unset( $meta['press'] );
     	return $meta;
