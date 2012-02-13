@@ -3,7 +3,7 @@
 Plugin Name: Relative Urls (ABT)
 Plugin URI: http://atlanticbt.com/blog/wordpress-relative-urls-plugin
 Description: By default, WP inserts absolute urls (including protocol and domain) into post content.  Replace all self-referencing links with relative paths "/" instead.  Works when inserting images into posts, and on the actual save_post action.
-Version: 0.3
+Version: 0.3.1
 Author: atlanticbt, zaus
 Author URI: http://atlanticbt.com
 License: GPLv2 or later
@@ -247,6 +247,9 @@ class ABT_Relative_Urls {
 			
 			#_log('original', $meta);
 			
+			// remove specified fields from consideration
+			$meta = apply_filters('abt_relative_urls_exclude_meta', $meta, $post_ID);
+
 			// scan meta for urls
 			#array_walk_recursive($meta, 'maybe_unserialize');
 			$this->nested_strip($meta);

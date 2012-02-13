@@ -75,6 +75,20 @@ Two hooks are provided to alter these defaults:
 
 The reason it looks for the `src`, then `href`, then the actual attribute has to do with compatibility with the included relative image url plugin.
 
+= Can I exclude some meta fields? =
+
+Using the hook `abt_relative_urls_exclude_meta`, you can remove fields from the meta array before they are processed.  Anything not in the array won't get re-saved later, so it's effectively ignored.
+
+Ex)
+    
+add_filter('abt_relative_urls_exclude_meta', 'excludepress_meta');
+    function excludepress_meta($meta, $post_ID) {
+    	unset( $meta['press'] );
+    	return $meta;
+    }//--	fn	excludepress_meta
+
+You could also perform any custom scrubbing+saving within this hook as well, just make sure to remove it from the list so it's not automatically processed afterwards.
+
 = Developers =
 
 Check out our other developer-centric plugin, [WP-Dev-Library].  Suggestions/improvements welcome!
@@ -88,6 +102,10 @@ Check out our other developer-centric plugin, [WP-Dev-Library].  Suggestions/imp
 2. Resulting output after saving (and scrubbing) - notice that in the Firebug HTML output, links are relative except where shortcode used.
 
 == Changelog ==
+
+= 0.3.1 =
+
+* Added filter `abt_relative_urls_exclude_meta` to allow exclusion/special meta field processing.
 
 = 0.3 =
 
