@@ -103,6 +103,10 @@ Check out our other developer-centric plugin, [WP-Dev-Library].  Suggestions/imp
 
 == Changelog ==
 
+= 0.3.2 =
+
+* fixed incorrect logic whereby postmeta only updated if it was an array; should update regardless, but now only updates if value was changed
+
 = 0.3.1 =
 
 * Added filter `abt_relative_urls_exclude_meta` to allow exclusion/special meta field processing.

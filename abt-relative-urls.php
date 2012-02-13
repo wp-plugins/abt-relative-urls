@@ -3,7 +3,7 @@
 Plugin Name: Relative Urls (ABT)
 Plugin URI: http://atlanticbt.com/blog/wordpress-relative-urls-plugin
 Description: By default, WP inserts absolute urls (including protocol and domain) into post content.  Replace all self-referencing links with relative paths "/" instead.  Works when inserting images into posts, and on the actual save_post action.
-Version: 0.3.1
+Version: 0.3.2
 Author: atlanticbt, zaus
 Author URI: http://atlanticbt.com
 License: GPLv2 or later
@@ -243,12 +243,12 @@ class ABT_Relative_Urls {
 			 * have a different meta key than post...sheesh
 			 */
 			
-			$meta = get_post_meta($post_ID, false);
+			$original_meta = get_post_meta($post_ID, false);
 			
 			#_log('original', $meta);
 			
 			// remove specified fields from consideration
-			$meta = apply_filters('abt_relative_urls_exclude_meta', $meta, $post_ID);
+			$meta = apply_filters('abt_relative_urls_exclude_meta', $original_meta, $post_ID);
 
 			// scan meta for urls
 			#array_walk_recursive($meta, 'maybe_unserialize');
@@ -256,10 +256,10 @@ class ABT_Relative_Urls {
 			
 			// now...loop to save meta
 			foreach( $meta as $key => $value ){
-				// only care about arrays
 				// NOTE: because we retrieved the whole array before, each individual value
 				// 	needs to be "turned into a single" value (as though we did get_post_meta(id, key, TRUE))
-				if( is_array( $value[0] )) update_post_meta($post_ID, $key, $value[0]);
+				if( $value[0] !== $original_meta[$key][0] )	// only if value was changed
+					update_post_meta($post_ID, $key, $value[0]);
 			}
 			
 	}//--	fn	save_meta_replace_absurls
