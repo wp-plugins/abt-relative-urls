@@ -25,7 +25,7 @@ Includes code based on [Relative Image URLs][] plugin, which strips domain when 
 [Absolute to Relative URLs]: http://wordpress.org/extend/plugins/absolute-to-relative-urls/ "Programmatic plugin for removing URLs"
 [Relative Image URLs]: http://wordpress.org/extend/plugins/relative-image-urls/ "Alternate Plugin, not as much functionality"
 [Go Live Update URLS]: http://wordpress.org/extend/plugins/go-live-update-urls/ "Change URLs when pushing LIVE"
-[Domain Name & Path Fixer]: http://wordpress.org/extend/plugins/domain-name-path-fixer-plugin/ "
+[Domain Name & Path Fixer]: http://wordpress.org/extend/plugins/domain-name-path-fixer-plugin/ "Change URLs when pushing LIVE"
 
 == Installation ==
 
