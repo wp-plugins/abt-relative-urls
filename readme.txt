@@ -39,7 +39,7 @@ On `save_post` action, it examines both the `post_content` and `post_excerpt` su
 2. `src` attributes
 3. all other instances of the domain
 
-It then retrieves all of the `postmeta`, scans through the array, and removes the domain from any values.  Since it's a direct dump, it `maybe_unserialize`s it and 
+It then retrieves all of the `postmeta`, scans through the array, and removes the domain from any values.  Since it's a direct dump, it `maybe_unserialize`s each value before recursively scrubbing the content.
 
 = Can I use the absolute URL? =
 
