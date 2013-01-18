@@ -4,7 +4,7 @@ Donate link: http://atlanticbt.com
 Tags: development, relative urls, absolute urls, urls, alters
  content, alters post-meta, scrub, domain, domain change, link, links, update links, move wordpress
 Requires at least: 2.8
-Tested up to: 3.3.3
+Tested up to: 3.5
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -108,6 +108,9 @@ Check out our other developer-centric plugin, [WP-Dev-Library].  Suggestions/imp
 2. Resulting output after saving (and scrubbing) - notice that in the Firebug HTML output, links are relative except where shortcode used.
 
 == Changelog ==
+
+= 0.4 =
+* fixed an issue with the nonce_name creation.  Minor release.
 
 = 0.3.2 =
 
